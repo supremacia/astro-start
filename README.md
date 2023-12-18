@@ -4,8 +4,7 @@
 git clone https://github.com/supremacia/astro-start.git
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/supremacia/astro-start)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/supremacia/astro-start)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/supremacia/astro-start) [![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/supremacia/astro-start)
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
@@ -16,6 +15,7 @@ Inside of your Astro project, you'll see the following folders and files:
 ```text
 /
 ├── public/
+|   └── favicon.svg
 |
 ├── src/
 |   └── assets/
@@ -23,22 +23,31 @@ Inside of your Astro project, you'll see the following folders and files:
 │   |   |   └── root.css
 │   |   |   └── layout.css
 │   |   |   └── reset.css
+│   |   |   └── style.css
 |   |   |
 │   |   └── js
-│   |       └── main.js
+│   |       └── app.ts
 |   |
 |   └── components/
 │   |   └── Footer.astro
 │   |   └── Head.astro
 │   |   └── Header.astro
+│   |   └── Utils/
+│   |       └── Utils.astro
+│   |       └── utils.css
+│   |       └── utils.ts
 |   |
 |   └── layouts/
 │   |   └── Layout.astro
 |   |
 │   └── pages/
 │       └── index.astro
+│       └── signin.astro
+│       └── 404.astro
 |
+└── astro.config.mjs
 └── package.json
+└── tsconfig.json
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.

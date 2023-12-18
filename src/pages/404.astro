@@ -1,0 +1,111 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Page not found" description="Página não encontrada - 404">
+  	<div class="container t404">
+    	<div class="terminal">
+			<div class="txt">
+				<span id="txt-0"></span>
+				<span class="cursor"></span>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style is:inline>
+.t404 {
+}
+
+.t404,
+.t404 .terminal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.t404 .terminal {
+	gap: 1rem;
+}
+
+.t404 .txt {
+	color: #123;
+	display: block;
+}
+
+.t404 h1 {
+	font-size: 2.2rem;
+	color: #890;
+	display: inline;
+}
+
+.t404 h3 {
+	display: inline;
+	font-weight: bold;
+}
+
+.t404 b {
+	color: #aaa;
+}
+
+.t404 .cursor {
+	width: .5rem;
+	height: 1.4rem;
+	margin: -.2rem 0 -.4rem .4rem;
+	display: inline-block;
+	background: #FF0;
+	animation: blink 0.3s infinite;
+}
+
+.t404 .btn-link {
+	padding: .5rem 3rem;
+	border-radius: 8px;
+	background: #000;
+	color: #FF0;
+	text-decoration: none;
+	cursor: pointer;
+	transition: 1s;
+}
+
+.t404 .btn-link:hover {
+	color: #000;
+	background: #FF0;
+
+}
+</style>
+
+<script>
+	let c = 0,
+		s = 0,
+		i = 0
+	
+	const r= '<span class="cursor"></span>',
+		  __ = (e: any) => document.querySelector(e),
+		  T:any = __('.terminal'),
+		  text = [
+		"<h1>404, page not found.</h1>",
+		"Sponsor the creation of <h3>this page for you</h3>!"
+	],
+	cursor = () => {
+		if(s >= text.length) {
+			__('.cursor').remove()
+			clearInterval(i)
+			reload()
+			return T.innerHTML += `<div><a href="/" class="btn-link">Please donate us a ☕ coffee!</a>${r}</div>`
+		}
+		if(c > text[s].length) {
+			__('#txt-'+s).innerHTML=text[s]
+			__('.cursor').remove()
+			s++
+			c = 0
+			T.innerHTML+=`<div class="txt"><span id="txt-${s}""></span>${r}</div>`
+			return 
+		}
+
+		__('#txt-'+s).innerHTML = text[s].substring(0, c)
+		c++
+	},
+	reload = () => setTimeout(() => location.reload(), 8000)
+	window.onload= () => i = setInterval(cursor, 30)
+</script>

@@ -1,17 +1,28 @@
 ---
-import '@assets/css/layout.css'
+import '@assets/css/style.css'
 import Head from '@components/Head.astro'
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+import Utils from "@components/Utils/Utils.astro"
 
-const { title } = Astro.props;
+interface Props {
+  title: string
+  description: string
+  header?: boolean
+  footer?: boolean
+}
+
+const { title, description, header = true, footer = true } = Astro.props
 ---
-<Head {title} />
+<Head {title} {description} />
   <body>
-    <Header />
+    {header && (<Header {title} />)}
     <main>
       <slot />
     </main>
-    <Footer />
+    {footer && (<Footer />)}
+	<Utils />
   </body>
 </html>
+
+<script src="@assets/js/app.ts"></script>
