@@ -18,35 +18,35 @@ Inside of your Astro project, you'll see the following folders and files:
 |   └── favicon.svg
 |
 ├── src/
-|   └── assets/
-│   |   └── css
-│   |   |   └── root.css
-│   |   |   └── layout.css
-│   |   |   └── reset.css
+|   ├── assets/
+│   |   ├── css
+│   |   |   ├── root.css
+│   |   |   ├── layout.css
+│   |   |   ├── reset.css
 │   |   |   └── style.css
 |   |   |
 │   |   └── js
 │   |       └── app.ts
 |   |
-|   └── components/
-│   |   └── Footer.astro
-│   |   └── Head.astro
-│   |   └── Header.astro
+|   ├── components/
+│   |   ├── Footer.astro
+│   |   ├── Head.astro
+│   |   ├── Header.astro
 │   |   └── Utils/
-│   |       └── Utils.astro
-│   |       └── utils.css
+│   |       ├── Utils.astro
+│   |       ├── utils.css
 │   |       └── utils.ts
 |   |
-|   └── layouts/
+|   ├── layouts/
 │   |   └── Layout.astro
 |   |
 │   └── pages/
-│       └── index.astro
-│       └── signin.astro
+│       ├── index.astro
+│       ├── signin.astro
 │       └── 404.astro
 |
-└── astro.config.mjs
-└── package.json
+├── astro.config.mjs
+├── package.json
 └── tsconfig.json
 ```
 
