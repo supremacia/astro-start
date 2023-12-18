@@ -1,0 +1,82 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Basic">
+  <div class="container wh-center">
+    <h1>Sign in</h1>
+
+    <form action="/" method="post">
+      <div class="frm-field">
+        <label for="frm-name">Name</label>
+        <input type="text" id="frm-name" placeholder="Your name" required autocomplete="false" />
+      </div>
+
+      <div class="frm-field">
+        <label for="frm-password">Password</label>
+        <input type="password" id="frm-password" placeholder="Your password" required autocomplete="false" />
+      </div>
+
+      <div class="frm-field">
+        <button>Sign in</button>
+      </div>
+    </form>
+  </div>
+</Layout>
+
+<style>
+	.wh-center {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		gap: 1rem;
+	}
+
+	h1 {
+		font-family: var(--font-1);
+		font-weight: 300;
+		font-size: 4rem;
+		margin: 0;
+		color:  var(--color-1);
+		text-shadow: 0 0 1px rgba(0, 0, 0, .6);
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		width: 100%;
+		max-width: 280px;
+
+		padding: 4rem 2rem;
+		border-radius: var(--radius-1);
+		/* box-shadow: var(--elevation), var(--elevation-4); */
+	}
+
+	.frm-field {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.frm-field label {
+		opacity: .4;
+		padding: 0 0 .2rem .5rem;
+	}
+
+	.frm-field input,
+	.frm-field button {
+		outline: none;
+		border: none;
+		border-radius: var(--radius-1);
+		box-shadow: var(--elevation-1);
+		padding: 1rem;
+	}
+
+	.frm-field button {
+		margin: 1rem 0 0 0;
+		background-image: linear-gradient(to top, #ccc, #fff);
+		cursor: pointer;
+	}
+</style>

@@ -1,0 +1,29 @@
+@import url(./root.css);
+@import url(./modern-normalize.min.css);
+
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100dvh;
+	font-family: var(--font);
+
+	background-image: linear-gradient(to top, #bbb, #fff, #eee);
+	background-size: cover;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 1rem;
+	max-width: 800px;
+}
+
+header, 
+footer {
+	background: var(--bg-1);
+	color: var(--color-1);
+	padding: 1rem 0;
+}
+
+main {
+	flex: 1;
+}
